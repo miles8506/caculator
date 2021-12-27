@@ -24,7 +24,7 @@ const cpn = {
         actionStatus.value = !actionStatus.value;
       } else if (resetShowNum.value) {
         showNum.value = '';
-        resetShowNum.value = !resetShowNum.value;
+        resetShowNum.value = false;
       }
       showNum.value += num;
 
@@ -48,7 +48,7 @@ const cpn = {
         controlDoubleClick = !controlDoubleClick;
       }
       controlResultClick = true;
-      resetShowNum.value = !resetShowNum.value;
+      resetShowNum.value = true;
     }
 
     // reset
@@ -64,9 +64,7 @@ const cpn = {
 
     // result
     const onResult = () => {
-      if (computedNum.count === '0' && computedNum.container === '0') {
-        return;
-      }
+      if (computedNum.count === '0' && computedNum.container === '0') return;
       if (!controlResultClick) return;
       controlResultClick = !controlResultClick;
       computedNum.container = showNum.value;
