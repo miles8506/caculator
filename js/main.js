@@ -35,65 +35,12 @@ const cpn = {
       controlDoubleClick = !controlDoubleClick;
     };
 
-    // +
-    const onAdd = () => {
+    const onOperateStatus = (status) => {
       if (operateStatus.value === '') {
         computedNum.count = showNum.value;
-        operateStatus.value = OPERATE_STATUS_ADD;
+        operateStatusFn(operateStatus, status);
       } else {
-        operateStatus.value = OPERATE_STATUS_ADD;
-        if (!controlDoubleClick) return;
-        computedNum.container = showNum.value;
-        const res = computedFn(operateStatus.value, computedNum);
-        computedNum.count = res;
-        controlDoubleClick = !controlDoubleClick;
-      }
-      controlResultClick = true;
-      resetShowNum.value = !resetShowNum.value;
-    }
-
-    // -
-    const onSub = () => {
-      if (operateStatus.value === '') {
-        computedNum.count = showNum.value;
-        operateStatus.value = OPERATE_STATUS_SUB;
-      } else {
-        operateStatus.value = OPERATE_STATUS_SUB;
-        // 預防user重複點擊
-        if (!controlDoubleClick) return;
-        computedNum.container = showNum.value;
-        const res = computedFn(operateStatus.value, computedNum);
-        computedNum.count = res;
-        controlDoubleClick = !controlDoubleClick;
-      }
-      controlResultClick = true;
-      resetShowNum.value = !resetShowNum.value;
-    }
-
-    // *
-    const onMultiply = () => {
-      if (operateStatus.value === '') {
-        computedNum.count = showNum.value;
-        operateStatus.value = OPERATE_STATUS_MULTIPLY;
-      } else {
-        operateStatus.value = OPERATE_STATUS_MULTIPLY;
-        if (!controlDoubleClick) return;
-        computedNum.container = showNum.value;
-        const res = computedFn(operateStatus.value, computedNum);
-        computedNum.count = res;
-        controlDoubleClick = !controlDoubleClick;
-      }
-      controlResultClick = true;
-      resetShowNum.value = !resetShowNum.value;
-    }
-
-    // /
-    const onDivision = () => {
-      if (operateStatus.value === '') {
-        computedNum.count = showNum.value;
-        operateStatus.value = OPERATE_STATUS_DIVISION;
-      } else {
-        operateStatus.value = OPERATE_STATUS_DIVISION;
+        operateStatusFn(operateStatus, status);
         if (!controlDoubleClick) return;
         computedNum.container = showNum.value;
         const res = computedFn(operateStatus.value, computedNum);
@@ -134,10 +81,11 @@ const cpn = {
       showNum,
       computedNum,
       onNum,
-      onDivision,
-      onMultiply,
-      onSub,
-      onAdd,
+      // onDivision,
+      // onMultiply,
+      // onSub,
+      // onAdd,
+      onOperateStatus,
       onReset,
       onResult
     }
@@ -146,3 +94,72 @@ const cpn = {
 
 const app = Vue.createApp(cpn);
 app.mount('#app');
+
+    // +
+    // const onAdd = () => {
+    //   if (operateStatus.value === '') {
+    //     computedNum.count = showNum.value;
+    //     operateStatus.value = OPERATE_STATUS_ADD;
+    //   } else {
+    //     operateStatus.value = OPERATE_STATUS_ADD;
+    //     if (!controlDoubleClick) return;
+    //     computedNum.container = showNum.value;
+    //     const res = computedFn(operateStatus.value, computedNum);
+    //     computedNum.count = res;
+    //     controlDoubleClick = !controlDoubleClick;
+    //   }
+    //   controlResultClick = true;
+    //   resetShowNum.value = !resetShowNum.value;
+    // }
+
+    // -
+    // const onSub = () => {
+    //   if (operateStatus.value === '') {
+    //     computedNum.count = showNum.value;
+    //     operateStatus.value = OPERATE_STATUS_SUB;
+    //   } else {
+    //     operateStatus.value = OPERATE_STATUS_SUB;
+    //     // 預防user重複點擊
+    //     if (!controlDoubleClick) return;
+    //     computedNum.container = showNum.value;
+    //     const res = computedFn(operateStatus.value, computedNum);
+    //     computedNum.count = res;
+    //     controlDoubleClick = !controlDoubleClick;
+    //   }
+    //   controlResultClick = true;
+    //   resetShowNum.value = !resetShowNum.value;
+    // }
+
+    // *
+    // const onMultiply = () => {
+    //   if (operateStatus.value === '') {
+    //     computedNum.count = showNum.value;
+    //     operateStatus.value = OPERATE_STATUS_MULTIPLY;
+    //   } else {
+    //     operateStatus.value = OPERATE_STATUS_MULTIPLY;
+    //     if (!controlDoubleClick) return;
+    //     computedNum.container = showNum.value;
+    //     const res = computedFn(operateStatus.value, computedNum);
+    //     computedNum.count = res;
+    //     controlDoubleClick = !controlDoubleClick;
+    //   }
+    //   controlResultClick = true;
+    //   resetShowNum.value = !resetShowNum.value;
+    // }
+
+    // /
+    // const onDivision = () => {
+    //   if (operateStatus.value === '') {
+    //     computedNum.count = showNum.value;
+    //     operateStatus.value = OPERATE_STATUS_DIVISION;
+    //   } else {
+    //     operateStatus.value = OPERATE_STATUS_DIVISION;
+    //     if (!controlDoubleClick) return;
+    //     computedNum.container = showNum.value;
+    //     const res = computedFn(operateStatus.value, computedNum);
+    //     computedNum.count = res;
+    //     controlDoubleClick = !controlDoubleClick;
+    //   }
+    //   controlResultClick = true;
+    //   resetShowNum.value = !resetShowNum.value;
+    // }

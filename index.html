@@ -28,10 +28,10 @@
           </template>
         </div>
         <div class="operate">
-          <button class="operate_btn" @click="onDivision">%</button>
-          <button class="operate_btn" @click="onMultiply">x</button>
-          <button class="operate_btn" @click="onSub">-</button>
-          <button class="operate_btn" @click="onAdd">+</button>
+          <button class="operate_btn" @click="onOperateStatus('division')">%</button>
+          <button class="operate_btn" @click="onOperateStatus('multiply')">x</button>
+          <button class="operate_btn" @click="onOperateStatus('sub')">-</button>
+          <button class="operate_btn" @click="onOperateStatus('plus')">+</button>
         </div>
         <div class="other">
           <button class="reset_btn" @click="onReset">C</button>
@@ -43,6 +43,7 @@
   <script src="https://unpkg.com/vue@next"></script>
   <script src="./config/enum.js"></script>
   <script src="./hook/computedFn.js"></script>
+  <script src="./hook/operateStatusFn.js"></script>
   <script src="./js/main.js"></script>
   </script>
 </body>
