@@ -35,7 +35,7 @@ const cpn = {
       controlDoubleClick = !controlDoubleClick;
     };
 
-    const onOperateStatus = (status) => {
+    const onOperateSign = (status) => {
       if (operateStatus.value === '') {
         computedNum.count = showNum.value;
         operateStatusFn(operateStatus, status);
@@ -64,7 +64,6 @@ const cpn = {
 
     // result
     const onResult = () => {
-      if (showNum.value === '0') return;
       if (computedNum.count === '0' && computedNum.container === '0') {
         return;
       }
@@ -85,7 +84,7 @@ const cpn = {
       // onMultiply,
       // onSub,
       // onAdd,
-      onOperateStatus,
+      onOperateSign,
       onReset,
       onResult
     }
