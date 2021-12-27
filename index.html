@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caculator</title>
+  <link rel="stylesheet" href="./style/normalize.css"></link>
+  <link rel="stylesheet" href="./style/style.css"></link>
+</head>
+<body>
+  <div id="app">
+    <div class="caculator">
+      <div class="panel_wrap">
+        <div class="panel">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="screen">{{ showNum }}</div>
+      <div class="keyboard">
+        <div class="num">
+          <template v-for="item in keyBoardNum" :key="item">
+            <button class="num_btn" @click="onNum(item)">{{item}}</button>
+          </template>
+        </div>
+        <div class="operate">
+          <button class="operate_btn" @click="onDivision">%</button>
+          <button class="operate_btn" @click="onMultiply">x</button>
+          <button class="operate_btn" @click="onSub">-</button>
+          <button class="operate_btn" @click="onAdd">+</button>
+        </div>
+        <div class="other">
+          <button class="reset_btn" @click="onReset">C</button>
+          <button class="result_btn" @click="onResult">=</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="./config/enum.js"></script>
+  <script src="./hook/computedFn.js"></script>
+  <script src="./js/main.js"></script>
+  </script>
+</body>
+</html>

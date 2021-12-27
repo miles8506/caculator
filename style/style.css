@@ -1,0 +1,86 @@
+.caculator {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  margin: 100px auto;
+  padding: 20px 10px;
+  background-color: #000;
+  border-radius: 5px;
+}
+.caculator .panel_wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+.caculator .panel_wrap .panel {
+  display: flex;
+  width: 100px;
+  height: 30px;
+  margin-bottom: 15px;
+  border: 2px solid #999;
+}
+.caculator .panel_wrap .panel > span {
+  flex: 1;
+  background-color: #960c0c;
+  height: 100%;
+  border-right: 1px solid #999;
+}
+.caculator .panel_wrap .panel > span:last-child {
+  border-right: 0;
+}
+.caculator .screen {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 5px;
+  background-color: #e8e8ad;
+  text-align: right;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000;
+  overflow: hidden;
+}
+.caculator .keyboard {
+  display: grid;
+  grid-template-columns: 1fr 50px 50px;
+  grid-column-gap: 10px;
+}
+.caculator .keyboard .num {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+.caculator .keyboard .num .num_btn {
+  height: 50px;
+  background-color: #505050;
+}
+.caculator .keyboard .operate {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 5px;
+}
+.caculator .keyboard .operate .operate_btn {
+  background-color: #ef931b;
+}
+.caculator .keyboard .other {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 5px;
+}
+.caculator .keyboard .other .reset_btn {
+  background-color: #d75a5a;
+}
+.caculator .keyboard .other .result_btn {
+  background-color: #ef931b;
+}
+button {
+  border-radius: 3px;
+  text-align: center;
+  border: 1px solid #fff;
+  color: #fff;
+}
+button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
